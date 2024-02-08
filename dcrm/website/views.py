@@ -13,7 +13,7 @@ def home(request):
 
         if user is not None:
             login(request, user)
-            messages.success(request, "Log in successful")
+            messages.success(request, "Log in successful.")
             return redirect('home')
         else:
             messages.success(request, "Login error. Plase try again.")
@@ -23,4 +23,6 @@ def home(request):
         return render(request, 'home.html', context={})
 
 def logout_user(request):
-    pass
+    logout(request)
+    messages.success(request, "You have been logged out.")
+    return redirect('home')
