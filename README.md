@@ -1,4 +1,4 @@
-# django-crm-app
+# Django CRM App
 
 A CRM app made to practice Django application building, HTML, and bootstrap CSS.
 
