@@ -24,6 +24,7 @@
     <br>
     <div>
         <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+        <a href="{% url 'update_record' customer_record.id %}" class="btn btn-secondary">Update Customer</a>
         <a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger">Delete</a>
     </div>
 </div>
