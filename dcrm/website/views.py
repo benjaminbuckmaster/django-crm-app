@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from .models import Record
 
 def home(request):
+    records = Record.objects.all()
+
     # check to see if logging in
     if request.method == 'POST':
         username = request.POST['username']
@@ -20,7 +23,7 @@ def home(request):
             return redirect('home')
 
     else:
-        return render(request, 'home.html', context={})
+        return render(request, 'home.html', context={'records':records})
 
 def logout_user(request):
     logout(request)
